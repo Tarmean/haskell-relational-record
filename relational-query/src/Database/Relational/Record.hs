@@ -12,7 +12,7 @@
 -- This module defines interfaces of projected record type.
 module Database.Relational.Record (
   -- * Record
-  Record, Predicate, PI,
+  Record(..), Predicate, PI,
   recordColumns,
 
   -- * Projections
