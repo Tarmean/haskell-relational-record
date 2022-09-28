@@ -48,8 +48,9 @@ import Database.Relational.SqlSyntax
 
 -- | Phantom typed record. Projected into Haskell record type 't'.
 newtype Record c t =
-  Record
-  { untypeRecord :: Tuple {- ^ Discard record type -} }  deriving Show
+  Record Tuple {- ^ Discard record type -}  deriving Show
+untypeRecord :: Record c t -> Tuple
+untypeRecord (Record t) = t
 
 -- | Type for predicate to restrict of query result.
 type Predicate c = Record c (Maybe Bool)
